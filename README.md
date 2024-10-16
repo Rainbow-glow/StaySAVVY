@@ -68,4 +68,4 @@ Thank you for choosing StaySAVVY! We hope to make your hotel booking experience 
 
 #  AUTHORS
 * CHISOM NWACHUKWU
-* GLORIA ISIUWA
+* GLORIA ISUWA
