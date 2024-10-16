@@ -1,11 +1,20 @@
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
+import { Inter } from 'next/font/google'
+import { ClerkProvider } from '@clerk/nextjs'
 
-export const metadata: Metadata = {
-  title: "StaySAVVY",
-  description: "Stay informed, stay Stay SAVVY ~ A hotel-booking App",
-};
+import './globals.css'
+import QueryProvider from "@/providers/query-provider";
+
+export const metadat: Metadata = {
+  title: 'Stay savvy XP'
+}
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600']
+})
+
 
 export default function RootLayout({
   children,
@@ -13,12 +22,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={cn(`antialiased min-h-screen w-full`, inter.className)}
+        >
+          <QueryProvider>
+            { children }
+          </QueryProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
