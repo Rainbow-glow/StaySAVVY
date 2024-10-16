@@ -6,7 +6,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 import './globals.css'
 import QueryProvider from "@/providers/query-provider";
 
-export const metadat: Metadata = {
+export const metadata: Metadata = {
   title: 'Stay savvy XP'
 }
 
